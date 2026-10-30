@@ -1,0 +1,241 @@
+.page-leaderboard {
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px 16px 120px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    #8b0000 0%,
+    #b31b1b 28%,
+    #d64a4a 52%,
+    #f1c1c1 74%,
+    #ffffff 100%
+  );
+  font-family: Inter, Arial, sans-serif;
+}
+
+.leaderboard-shell {
+  width: 100%;
+  max-width: 430px;
+}
+
+.leaderboard-top {
+  padding: 18px 18px 28px;
+  border-radius: 30px 30px 0 0;
+  background: rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.leaderboard-top h1 {
+  margin: 0 0 28px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.podium {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.podium-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.podium-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #b31b1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.podium-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.podium-points {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 10px;
+}
+
+.podium-block {
+  width: 88px;
+  border-radius: 18px 18px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.podium-first .podium-block {
+  height: 130px;
+  background: #7a0000;
+}
+
+.podium-second .podium-block {
+  height: 100px;
+  background: #c94c4c;
+}
+
+.podium-third .podium-block {
+  height: 82px;
+  background: #e58a8a;
+}
+
+/* tie fix */
+.podium-user.tie .podium-block {
+  height: 120px !important;
+}
+
+/* Container for the 4th+ place list */
+.leaderboard-list-card {
+  background: #ffffff; /* Clean white for contrast */
+  border-radius: 28px;
+  margin-top: -10px; /* Pull it slightly over the podium background */
+  padding: 24px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Row Styling */
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0; /* Subtle border for definition */
+  border-radius: 20px;
+  transition: transform 0.2s ease;
+}
+
+.leaderboard-row:hover {
+  transform: scale(1.02); /* Slight lift on hover */
+}
+
+/* Ranking Number (4, 5, 6...) */
+.row-rank {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #888888; /* Dimmed so it doesn't shout louder than the name */
+  width: 30px;
+  text-align: left;
+}
+
+.row-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px; /* Slightly squircle for a modern look */
+  background: #b31b1b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 12px;
+}
+
+.row-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.row-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.row-points {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #b31b1b;
+  background: #fff5f5; /* Light red tag background */
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.leaderboard-empty,
+.leaderboard-loading {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 32px 16px;
+}
+
+.leaderboard-empty {
+  color: #555555;
+}
+
+@media (max-width: 520px) {
+  .page-leaderboard {
+    padding: 18px 12px 110px;
+  }
+
+  .leaderboard-top {
+    padding: 16px 14px 24px;
+  }
+
+  .leaderboard-top h1 {
+    font-size: 1.8rem;
+    margin-bottom: 22px;
+  }
+
+  .podium {
+    gap: 10px;
+  }
+
+  .podium-block {
+    width: 78px;
+    font-size: 1.8rem;
+  }
+
+  .podium-first .podium-block {
+    height: 118px;
+  }
+
+  .podium-second .podium-block {
+    height: 90px;
+  }
+
+  .podium-third .podium-block {
+    height: 74px;
+  }
+
+  .podium-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.2rem;
+  }
+
+  .podium-user.tie .podium-block {
+    height: 108px !important;
+  }
+}

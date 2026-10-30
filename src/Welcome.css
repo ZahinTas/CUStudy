@@ -1,0 +1,84 @@
+.welcome-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+    box-sizing: border-box;
+    background: linear-gradient(
+      to bottom,
+      #8b0000 0%,
+      #b31b1b 35%,
+      #d64a4a 65%,
+      #f1c1c1 100%
+    );
+    font-family: Inter, Arial, sans-serif;
+  }
+  
+  .welcome-content {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .welcome-logo {
+    width: 270px;
+    height: 270px;
+    object-fit: contain;
+    margin-bottom: 8px;
+  }
+  
+  .welcome-tagline {
+    margin: 14px 0 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .welcome-subtext {
+    margin: 0 0 30px;
+    max-width: 320px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  
+  .welcome-btn {
+    width: 100%;
+    max-width: 260px;
+    height: 56px;
+    border: none;
+    border-radius: 999px;
+    background: white;
+    color: #b31b1b;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .welcome-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  }
+  
+  @media (max-width: 520px) {
+    .welcome-logo {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .welcome-tagline {
+      font-size: 1.15rem;
+    }
+  
+    .welcome-subtext {
+      font-size: 0.95rem;
+    }
+  }
